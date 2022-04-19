@@ -1,0 +1,11 @@
+--- scripts/main/server.js	2022-04-13 23:44:34.250549383 +0200
++++ scripts/main/server_10s_cache.js	2022-04-13 23:52:29.864160418 +0200
+@@ -47,7 +47,7 @@
+     app.set('trust proxy', 1);
+     app.use(bodyParser.json());
+     app.use(limiter);
+-    app.use(cache('1 minute'));
++    app.use(cache('10 seconds'));
+     app.use(compress());
+     app.use(cors());
+ 
