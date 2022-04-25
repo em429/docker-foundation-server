@@ -26,9 +26,9 @@ RUN npm clean-install \
     && rm -r /home/node/.npm
 
 # Patch settings that can't be changed in config
-COPY raise_rateLimit_to_2000.diff .
+COPY turn_off_limiter.diff .
 # COPY lower_cache_to_10s.diff .
-RUN patch -p0 raise_rateLimit_to_2000.diff
+RUN patch -p0 turn_off_limiter.diff
 
 # Remove unecessary buildtime dependencies to reduce image size:
 # TODO: check if libsodium or libboost is needed during runtime or can be safely removed after build?
