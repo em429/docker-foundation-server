@@ -1,0 +1,11 @@
+--- scripts/main/server.js	2022-04-25 05:49:09.891725827 +0200
++++ scripts/main/server_no_limit.js	2022-04-25 05:50:50.780200274 +0200
+@@ -46,7 +46,7 @@
+     // Establish Middleware
+     app.set('trust proxy', 1);
+     app.use(bodyParser.json());
+-    app.use(limiter);
++    // app.use(limiter);
+     app.use(cache('1 minute'));
+     app.use(compress());
+     app.use(cors());
